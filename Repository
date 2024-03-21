@@ -1,0 +1,57 @@
+import speech_recognition as sr
+import pyttsx3
+import pyaudio
+
+class Jacob:
+    def_init_(self):
+       self.recognizer = sr.Recognizer()
+       self.speaker - pyttsx3.init()
+       self.speaker.setProperty('rate', 150)
+
+    def listen(self):
+        with sr.Microphone() as source:
+            print("Listening...")
+            self.speaker.say("Listening...")
+            self.speaker.runAndWait()
+            query = self.recognizer.recognize_google(voice)
+            print("You said:", query)
+            return query.lower()
+         except sr.UnknownValueError:
+            print("Sorry what?")
+            self.speaker.say("Say again?")
+            self.speaker.runAndWait()
+            return ""
+         except sr.RequestError as e:
+            print("Could not request results: {0}", format(e))
+            self.speaker.say("Could not request results.")
+            return ""
+
+       def respond(self, text):
+           print("Jacob:", text)
+           self.speaker.say(text)
+           self.speaker.runAndWait()
+
+    if_name_=="_main_":
+      jacob = Jacob()
+      jacob.respond("Hi")
+      while True:
+          command = jacob.listen()
+
+          if 'who is your girlfriend' in command:
+              talk("Hannah Ga***")
+
+          if 'what time is best' in command:
+              talk("Night time")
+
+          if 'what is your favorite food' in command
+              talk("Fried chicken")
+
+          if 'name' in command:
+              talk("My name is Jacob.")
+
+          if 'exit' in command:
+              jacob.respond("Bye.")
+              break
+
+          else:
+              jacob.respond("What kind of command is that?")
